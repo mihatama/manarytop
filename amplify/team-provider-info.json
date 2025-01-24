@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-manary-dev-751c4-authRole",
+      "UnauthRoleArn": "arn:aws:iam::560111363951:role/amplify-manary-dev-751c4-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::560111363951:role/amplify-manary-dev-751c4-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-manary-dev-751c4-deployment",
+      "UnauthRoleName": "amplify-manary-dev-751c4-unauthRole",
+      "StackName": "amplify-manary-dev-751c4",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:560111363951:stack/amplify-manary-dev-751c4/d15f6cb0-da77-11ef-98d8-0a3431592f5d",
+      "AmplifyAppId": "d219my18brgven"
+    }
+  }
+}
