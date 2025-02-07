@@ -23,7 +23,7 @@ export default function Contact() {
       <h2 style={styles.heading}>お問い合わせ</h2>
       <p style={styles.info}>
         ご質問やご相談など、お気軽にお問い合わせください。<br />
-        お電話でのご連絡: <strong>0120-XXXX-XXXX（平日 9:00～18:00）</strong>
+        
       </p>
       <form style={styles.form} onSubmit={handleSubmit}>
         <label style={styles.label}>
