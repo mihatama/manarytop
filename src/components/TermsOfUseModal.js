@@ -36,7 +36,6 @@ export default function TermsOfUseModal({ isOpen, onClose }) {
         w="100%"
         onClick={(e) => e.stopPropagation()}
         position="relative"
-        /* ここを追加 */
         maxHeight="80vh"
         overflowY="auto"
       >

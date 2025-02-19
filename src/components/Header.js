@@ -1,6 +1,6 @@
 // components/Header.js
 import React from "react";
-import { chakra as c, HStack, Link as ChakraLink } from "@chakra-ui/react";
+import { chakra as c, HStack, Link as ChakraLink, Image } from "@chakra-ui/react";
 
 export default function Header() {
   return (
@@ -18,8 +18,16 @@ export default function Header() {
         justifyContent="space-between"
         alignItems="center"
       >
-        {/* ロゴ */}
-        <c.div fontSize="xl" fontWeight="bold" color="brand.500">
+        {/* ロゴ（左にアイコンを配置） */}
+        <c.div
+          display="flex"
+          alignItems="center"
+          fontSize="xl"
+          fontWeight="bold"
+          color="brand.500"
+        >
+          {/* favicon.ico を表示アイコンの例に使用 */}
+          <Image src="/favicon.ico" alt="Manary Icon" boxSize="60px" mr={2} />
           Manary
         </c.div>
 

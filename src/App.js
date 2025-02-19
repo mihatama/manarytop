@@ -1,4 +1,4 @@
-// App.js
+// App.js (例)
 import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "./theme";
@@ -6,6 +6,7 @@ import theme from "./theme";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
+
 import Plans from "./components/Plans";
 import Testimonials from "./components/Testimonials";
 import Flow from "./components/Flow";
@@ -19,6 +20,8 @@ function App() {
       <Header />
       <Hero />
       <Features />
+
+
       <Plans />
       <Testimonials />
       <Flow />
