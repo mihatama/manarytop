@@ -18,16 +18,16 @@ export default function Header() {
         justifyContent="space-between"
         alignItems="center"
       >
-        {/* ロゴ（左にアイコンを配置） */}
+        {/* ロゴ（アイコン上、Manary 下の2段構成） */}
         <c.div
           display="flex"
+          flexDirection="column"
           alignItems="center"
           fontSize="xl"
           fontWeight="bold"
           color="brand.500"
         >
-          {/* favicon.ico を表示アイコンの例に使用 */}
-          <Image src="/favicon.ico" alt="Manary Icon" boxSize="60px" mr={2} />
+          <Image src="/favicon.ico" alt="Manary Icon" boxSize="62px" mb={2} />
           Manary
         </c.div>
 
