@@ -1,4 +1,14 @@
-import React from 'react';
+// components/Plans.js
+import React from "react";
+import {
+  chakra as c,
+  Box,
+  Heading,
+  Text,
+  SimpleGrid,
+  UnorderedList,
+  ListItem,
+} from "@chakra-ui/react";
 
 export default function Plans() {
   const plansData = [
@@ -8,9 +18,9 @@ export default function Plans() {
       features: [
         "予約システム（基本機能）",
         "オンライン問診票（基本フォーム）",
-        "電子カルテ（基本機能）"
+        "電子カルテ（基本機能）",
       ],
-      recommend: "個人・小規模向け"
+      recommend: "個人・小規模向け",
     },
     {
       name: "プロプラン",
@@ -19,9 +29,9 @@ export default function Plans() {
         "予約システム（高度なカスタマイズ機能）",
         "オンライン問診票（複数フォーム対応）",
         "電子カルテ（分析レポート機能）",
-        "カスタマーサポート優先対応"
+        "カスタマーサポート優先対応",
       ],
-      recommend: "中規模助産院向け"
+      recommend: "中規模助産院向け",
     },
     {
       name: "プレミアムプラン",
@@ -30,70 +40,59 @@ export default function Plans() {
         "予約システム（スマホアプリ連携・自動リマインド）",
         "オンライン問診票（自由度の高いカスタマイズ）",
         "電子カルテ（高度な統計分析・外部連携）",
-        "専任担当によるコンサルティングサービス"
+        "専任担当によるコンサルティングサービス",
       ],
-      recommend: "複数拠点・高度分析向け"
+      recommend: "複数拠点・高度分析向け",
     },
   ];
 
   return (
-    <section className="container" id="plans">
-      <h2 style={styles.heading}>料金プラン</h2>
-      <div style={styles.planContainer}>
-        {plansData.map((plan, index) => (
-          <div key={index} style={styles.planCard}>
-            <h3 style={styles.planName}>{plan.name}</h3>
-            <p style={styles.price}>¥{plan.price.toLocaleString()}/月</p>
-            <ul style={styles.featureList}>
-              {plan.features.map((feat, idx) => (
-                <li key={idx}>{feat}</li>
-              ))}
-            </ul>
-            <p style={styles.recommend}>{plan.recommend}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+    <c.section id="plans" py={{ base: 10, md: 16 }}>
+      <c.div maxW="1200px" mx="auto" px={{ base: 4, md: 8 }}>
+        <Heading
+          fontSize={{ base: "2xl", md: "3xl" }}
+          mb={{ base: 8, md: 12 }}
+          textAlign="center"
+        >
+          料金プラン
+        </Heading>
+        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
+          {plansData.map((plan, index) => (
+            <Box
+              key={index}
+              border="1px solid"
+              borderColor="gray.200"
+              borderRadius="md"
+              p={6}
+              textAlign="center"
+              boxShadow="sm"
+              _hover={{ boxShadow: "md" }}
+            >
+              <Heading fontSize="xl" mb={3} color="brand.500">
+                {plan.name}
+              </Heading>
+              <Text fontSize="2xl" color="brand.600" mb={3}>
+                ¥{plan.price.toLocaleString()}/月
+              </Text>
+              <UnorderedList
+                textAlign="left"
+                mb={4}
+                spacing={2}
+                px={{ base: 4, md: 6 }}
+              >
+                {plan.features.map((feat, idx) => (
+                  <ListItem key={idx} fontSize="sm" color="gray.600">
+                    {feat}
+                  </ListItem>
+                ))}
+              </UnorderedList>
+              <Text color="gray.500" fontSize="sm">
+                {plan.recommend}
+              </Text>
+            </Box>
+          ))}
+        </SimpleGrid>
+      </c.div>
+    </c.section>
   );
 }
-
-const styles = {
-  heading: {
-    fontSize: '1.8rem',
-    marginBottom: '40px',
-    textAlign: 'center'
-  },
-  planContainer: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '20px',
-    justifyContent: 'center'
-  },
-  planCard: {
-    flex: '1 1 300px',
-    border: '1px solid #eee',
-    borderRadius: '6px',
-    padding: '20px',
-    textAlign: 'center',
-    maxWidth: '300px'
-  },
-  planName: {
-    fontSize: '1.4rem',
-    marginBottom: '10px'
-  },
-  price: {
-    fontSize: '1.2rem',
-    color: '#E27D60',
-    marginBottom: '10px'
-  },
-  featureList: {
-    listStyle: 'none',
-    margin: '20px 0',
-    padding: 0,
-    textAlign: 'left'
-  },
-  recommend: {
-    marginTop: '20px',
-    color: '#555'
-  }
-};

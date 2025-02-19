@@ -1,58 +1,54 @@
-import React from 'react';
+// components/Hero.js
+import React from "react";
+import { chakra as c, Button, Heading, Text } from "@chakra-ui/react";
 
 export default function Hero() {
   return (
-    <section style={styles.hero}>
-      <div style={styles.content}>
-        <h1 style={styles.title}>
-          助産院向けSaaSアプリ<br />
-          <span style={styles.accent}>「Manary」</span>
-        </h1>
-        <p style={styles.subtitle}>
-          予約・問診票・電子カルテを一元化し、<br />
-          忙しい助産師業務を効率化。<br />
+    <c.section
+      position="relative"
+      width="100%"
+      minH="70vh"
+      bgImage='url("https://via.placeholder.com/1200x800")'
+      bgPos="center"
+      bgSize="cover"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      id="hero"
+    >
+      {/* 半透明のオーバーレイ */}
+      <c.div
+        bg="rgba(255, 255, 255, 0.8)"
+        p={{ base: 6, md: 10 }}
+        borderRadius="md"
+        textAlign="center"
+        maxW="600px"
+      >
+        <Heading
+          fontSize={{ base: "2xl", md: "4xl" }}
+          mb={4}
+          lineHeight="1.4"
+          color="gray.700"
+        >
+          助産院向けSaaSアプリ <br />
+          <c.span color="brand.500">「Manary」</c.span>
+        </Heading>
+        <Text fontSize={{ base: "md", md: "lg" }} mb={6} color="gray.600">
+          予約・問診票・電子カルテを一元化し、 <br />
+          忙しい助産師業務を効率化。 <br />
           母子ケアの質をさらに高めましょう。
-        </p>
-        <a href="#contact" style={styles.button}>無料トライアルはこちら</a>
-      </div>
-    </section>
+        </Text>
+        <Button
+          as="a"
+          href="#contact"
+          bg="brand.500"
+          color="white"
+          size="lg"
+          _hover={{ bg: "brand.600" }}
+        >
+          無料トライアルはこちら
+        </Button>
+      </c.div>
+    </c.section>
   );
 }
-
-const styles = {
-  hero: {
-    width: '100%',
-    height: '70vh',
-    background: 'url("https://via.placeholder.com/1200x800") center/cover no-repeat',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  content: {
-    backgroundColor: 'rgba(255,255,255,0.8)',
-    padding: '40px',
-    borderRadius: '8px',
-    textAlign: 'center'
-  },
-  title: {
-    fontSize: '2rem',
-    marginBottom: '20px',
-    lineHeight: '1.4'
-  },
-  accent: {
-    color: '#E27D60'
-  },
-  subtitle: {
-    fontSize: '1rem',
-    marginBottom: '20px'
-  },
-  button: {
-    display: 'inline-block',
-    backgroundColor: '#E27D60',
-    color: '#fff',
-    padding: '12px 24px',
-    borderRadius: '4px',
-    textDecoration: 'none',
-    fontWeight: 'bold'
-  }
-};
